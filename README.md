@@ -47,4 +47,5 @@ This project showcases a **metadata-driven, dynamic file processing pipeline** i
 * [ ] Pursue **Microsoft Certified: Azure Data Engineer Associate (DP-203)**.
 
 ---
-**Made by Rajendra K** *Aspiring Azure Data Engineer | Cloud Computing Enthusiast | Open to Opportunities* [GitHub Profile](https://github.com/Rajendra-DataEngineer) | [(https://www.linkedin.com/in/rajendra-k-08a99840a?utm_source=share_via&utm_content=profile&utm_medium=member_android)]
+**Made by Rajendra K** *Aspiring Azure Data Engineer | Cloud Computing Enthusiast | Open to Opportunities* [[GitHub Profile](https://github.com/Rajendra-DataEngineer/adf-incremental-sales-loading)]
+(https://github.com/Rajendra-DataEngineer) | [(https://www.linkedin.com/in/rajendra-k-08a99840a?utm_source=share_via&utm_content=profile&utm_medium=member_android)]
