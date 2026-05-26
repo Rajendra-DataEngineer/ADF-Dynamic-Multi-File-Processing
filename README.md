@@ -1,51 +1,54 @@
-# Parameterized Dynamic Multi-File Processing Pipeline - Azure Data Factory
+# 3. Parameterized Multi-File Processing Pipeline
 
-## 🚀 Project Overview
-This project showcases a **metadata-driven, dynamic file processing pipeline** in Azure Data Factory. Instead of hardcoding file names, this pipeline utilizes a `Get Metadata` and `ForEach` design pattern to identify and process all files within a source directory automatically. This approach is standard for scalable, automated ETL/ELT workflows.
+## Project Overview
+This project demonstrates a **dynamic and reusable file processing pipeline** in Azure Data Factory. It automatically discovers and processes multiple files from a source folder using `Get Metadata` + `ForEach` pattern with full parameterization.
 
-## 🛠️ Key Technical Features
-* **Dynamic File Discovery**: Uses `Get Metadata` to scan containers and identify child items.
-* **Iterative Orchestration**: Implements a `ForEach` activity to process multiple files in a single execution.
-* **Parameterized Design**: Utilizes parameterized Linked Services and Datasets to ensure reusability across development, test, and production environments.
-* **Scalable Architecture**: Template-based design allowing for easy maintenance and expansion.
+## Key Features
+- Dynamic file discovery using Get Metadata Activity
+- Parameterized Dataset for reusability
+- ForEach Activity for iterative processing
+- Dynamic Copy Activity using expressions (`@item().name`)
+- Scalable and production-ready design
 
-## 🏗️ Architecture & Flow
-1.  **Get Metadata**: Identifies all objects (files) in the source ADLS Gen2 path.
-2.  **ForEach**: Iterates through the file list retrieved from the metadata.
-3.  **Copy Activity**: Moves data from source to destination, utilizing dynamic expressions for source/sink naming.
+## Architecture
+1. **Get Metadata** → Scans source folder and returns list of files
+2. **ForEach** → Iterates through each file
+3. **Copy Activity** → Processes each file dynamically
+- **Source**: Azure Data Lake Storage Gen2 (Parameterized)
+- **Sink**: Azure SQL Database
 
-## 💻 Technologies Used
-* **Azure Data Factory (ADF)**: Orchestration and control flow.
-* **Azure Data Lake Storage (ADLS) Gen2**: Primary data storage.
-* **Git Integration**: CI/CD workflows using GitHub for version control.
-* **Expressions/JSON**: Advanced ADF expression language for dynamic property handling.
+## Technologies Used
+- Azure Data Factory (V2)
+- Azure Data Lake Storage Gen2
+- Parameterized Datasets & Pipelines
+- Expressions & Dynamic Content
 
-## 📸 Pipeline Visuals
-*(Note: Upload your screenshots to a `/screenshots` folder in this repo to display them here)*
-* **Pipeline Overview**: `<img width="469" height="238" alt="image" src="https://github.com/user-attachments/assets/f2e025d9-0421-4d85-b225-c244db859969" />
-`
-* **Get Metadata Configuration**: `<img width="491" height="314" alt="image" src="https://github.com/user-attachments/assets/c247ce97-5290-4686-9c83-931470edeaf0" />
-`
-* **ForEach Iteration**: `<img width="490" height="302" alt="image" src="https://github.com/user-attachments/assets/5dbca2c4-5689-4e7f-ad5c-076c18f6ea30" />
-`
+## Screenshots
 
-## ⚙️ How to Deploy & Run
-1.  **Configure Linked Services**: Link your ADLS Gen2 account with your credentials.
-2.  **Dataset Setup**: Ensure the dataset path parameter matches your source folder structure.
-3.  **Validation**: Run the pipeline in **Debug** mode to verify child-item discovery.
-4.  **Publish**: Commit changes to the `main` branch and publish from the collaboration branch.
+![Get Metadata Activity]<img width="491" height="314" alt="image" src="https://github.com/user-attachments/assets/c247ce97-5290-4686-9c83-931470edeaf0" />
+*Get Metadata configuration to fetch file list*
 
-## 🧠 Key Learnings
-* **Dynamic Patterns**: Mastered the `Get Metadata` + `ForEach` design pattern.
-* **Data Orchestration**: Learned to pass dynamic items through pipeline parameters and context variables (`@item().name`).
-* **Portfolio Building**: Practiced Git-based ADF development, including branching, pull requests, and documentation.
+![ForEach Activity]<img width="490" height="302" alt="image" src="https://github.com/user-attachments/assets/5dbca2c4-5689-4e7f-ad5c-076c18f6ea30" />
+*ForEach loop processing multiple files*
 
-## 🚀 Future Roadmap
-* [ ] Implement **Error Handling & Logging** framework.
-* [ ] Build a **Medallion Architecture** (Bronze → Silver → Gold) pipeline.
-* [ ] Develop **Event-driven triggers** based on Blob creation.
-* [ ] Pursue **Microsoft Certified: Azure Data Engineer Associate (DP-203)**.
+![Pipeline Overview]<img width="469" height="238" alt="image" src="https://github.com/user-attachments/assets/f2e025d9-0421-4d85-b225-c244db859969" />
+*Complete Parameterized Multi-File Pipeline*
+
+
+* ## How to Run
+1. Update Linked Services
+2. Configure Dataset parameters (`FolderName`, `FileName`)
+3. Run pipeline in Debug mode
+4. Pass values to pipeline parameters
+
+## Learnings
+- Implementing dynamic file processing patterns
+- Working with Get Metadata + ForEach combination
+- Creating reusable parameterized pipelines
+- Using expressions like `@item().name` and `@dataset().parameter`
 
 ---
-**Made by Rajendra K** *Aspiring Azure Data Engineer | Cloud Computing Enthusiast | Open to Opportunities* [[GitHub Profile](https://github.com/Rajendra-DataEngineer/adf-incremental-sales-loading)]
-(https://github.com/Rajendra-DataEngineer) | [(https://www.linkedin.com/in/rajendra-k-08a99840a?utm_source=share_via&utm_content=profile&utm_medium=member_android)]
+**Made by Rajendra K**  
+Aspiring Azure Data Engineer | Open to UK Relocation
+`
+
